@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_skill_item_skill_items",
+  "info": {
+    "displayName": "skill-item"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skill_bars",
+  "info": {
+    "singularName": "skill-bar",
+    "pluralName": "skill-bars",
+    "displayName": "skill-bar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stack": {
+      "type": "string"
+    },
+    "progressPercentage": {
+      "type": "integer"
+    }
+  }
+}

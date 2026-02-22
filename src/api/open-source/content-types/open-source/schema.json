@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "open_sources",
+  "info": {
+    "singularName": "open-source",
+    "pluralName": "open-sources",
+    "displayName": "open-source"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "githubUserName": {
+      "type": "string"
+    }
+  }
+}
