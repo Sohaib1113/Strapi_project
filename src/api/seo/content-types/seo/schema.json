@@ -15,7 +15,7 @@
       "type": "string"
     },
     "description": {
-      "type": "blocks"
+      "type": "text"
     },
     "author": {
       "type": "string"
@@ -34,7 +34,9 @@
       "type": "string"
     },
     "keywords": {
-      "type": "json"
+      "type": "component",
+      "component": "keyword.keyword",
+      "repeatable": true
     }
   }
 }

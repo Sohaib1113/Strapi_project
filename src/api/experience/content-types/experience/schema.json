@@ -31,7 +31,7 @@
       "type": "string"
     },
     "desc": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }

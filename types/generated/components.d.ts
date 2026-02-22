@@ -1,5 +1,25 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BulletBullet extends Struct.ComponentSchema {
+  collectionName: 'components_bullet_bullets';
+  info: {
+    displayName: 'bullet';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface KeywordKeyword extends Struct.ComponentSchema {
+  collectionName: 'components_keyword_keywords';
+  info: {
+    displayName: 'keyword';
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface SkillBlockSkillBlock extends Struct.ComponentSchema {
   collectionName: 'components_skill_block_skill_blocks';
   info: {
@@ -40,6 +60,8 @@ export interface SoftwareSkillSoftwareSkill extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'bullet.bullet': BulletBullet;
+      'keyword.keyword': KeywordKeyword;
       'skill-block.skill-block': SkillBlockSkillBlock;
       'skill-item.skill-item': SkillItemSkillItem;
       'software-skill.software-skill': SoftwareSkillSoftwareSkill;

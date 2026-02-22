@@ -19,6 +19,15 @@
     },
     "address": {
       "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
     }
   }
 }
