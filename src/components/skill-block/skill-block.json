@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_skill_block_skill_blocks",
+  "info": {
+    "displayName": "skill-block"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "lottieAnimationFile": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "component",
+      "component": "skill-item.skill-item",
+      "repeatable": true
+    },
+    "softwareSkills": {
+      "type": "component",
+      "component": "software-skill.software-skill",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

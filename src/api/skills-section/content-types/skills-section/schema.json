@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "skills_sections",
+  "info": {
+    "singularName": "skills-section",
+    "pluralName": "skills-sections",
+    "displayName": "skills-section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "data": {
+      "type": "component",
+      "component": "skill-block.skill-block",
+      "repeatable": true
+    }
+  }
+}

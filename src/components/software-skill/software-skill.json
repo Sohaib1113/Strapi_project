@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_software_skill_software_skills",
+  "info": {
+    "displayName": "software-skill"
+  },
+  "options": {},
+  "attributes": {
+    "skillName": {
+      "type": "string"
+    },
+    "iconifyTag": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
