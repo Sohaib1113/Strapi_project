@@ -18,7 +18,7 @@
       "type": "string"
     },
     "feedback": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }

@@ -15,7 +15,7 @@
       "type": "string"
     },
     "desc": {
-      "type": "blocks"
+      "type": "text"
     },
     "github": {
       "type": "string"

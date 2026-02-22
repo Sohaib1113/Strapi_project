@@ -21,13 +21,15 @@
       "type": "string"
     },
     "desc": {
-      "type": "blocks"
+      "type": "text"
     },
     "grade": {
       "type": "string"
     },
     "descBullets": {
-      "type": "json"
+      "type": "component",
+      "component": "bullet.bullet",
+      "repeatable": true
     }
   }
 }
