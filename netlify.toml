@@ -1,7 +1,7 @@
 [build]
   base = "Frontend"
   command = "npm install --legacy-peer-deps && npm run build"
-  # do NOT set publish, let Next.js plugin handle it automatically
+  publish = ".netlify/output"  # relative to base, not Frontend/.netlify/output
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
