@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /*
+Host: Strapi_React_CMS-1hanzla100.vercel.app
