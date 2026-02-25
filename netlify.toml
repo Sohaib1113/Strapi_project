@@ -1,6 +1,7 @@
 [build]
   base = "Frontend"
   command = "npm install --legacy-peer-deps && npm run build"
+  publish = "Frontend/.netlify/output"  # plugin will output here
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
