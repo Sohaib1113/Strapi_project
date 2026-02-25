@@ -18,50 +18,43 @@ interface HomeProps {
 }
 
 export default function Home({ githubProfileData, portfolioData }: HomeProps) {
-  console.log("[Home] portfolioData:", portfolioData);
-  console.log("[Home] githubProfileData:", githubProfileData);
   return (
     <div>
       <SEO seoData={portfolioData?.seo || { title: "Portfolio" }} />
 
-<Navigation
-  greeting={portfolioData?.greeting}
-  socialLinks={portfolioData?.openSource}
-/>
-<Greetings greetings={portfolioData?.greeting} />
-<Skills skillsSection={portfolioData?.skillsSection} />
-<Proficiency skillBars={portfolioData?.skillBars} />
-<Education educationInfo={portfolioData?.education} />
-<Experience experience={portfolioData?.experience} />
-<Projects projects={portfolioData?.projects} />
-<Feedbacks feedbacks={portfolioData?.feedback} />
-<GithubProfileCard
-  {...(githubProfileData as GithubUserType)}
-  socialLinks={portfolioData?.openSource}
-/>
+      <Navigation
+        greeting={portfolioData?.greeting}
+        socialLinks={portfolioData?.openSource}
+      />
+      <Greetings greetings={portfolioData?.greeting} />
+      <Skills skillsSection={portfolioData?.skillsSection} />
+      <Proficiency skillBars={portfolioData?.skillBars} />
+      <Education educationInfo={portfolioData?.education} />
+      <Experience experience={portfolioData?.experience} />
+      <Projects projects={portfolioData?.projects} />
+      <Feedbacks feedbacks={portfolioData?.feedback} />
+      <GithubProfileCard
+        {...(githubProfileData as GithubUserType)}
+        socialLinks={portfolioData?.openSource}
+      />
     </div>
   );
 }
 
-export async function getStaticProps() {
+// 🔹 Change here from getStaticProps → getServerSideProps
+export async function getServerSideProps() {
   try {
+    // Fetch portfolio data from your API
     const portfolioRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`);
     const portfolioData = await portfolioRes.json();
 
+    // Fetch GitHub profile if username exists
     const githubUserName = portfolioData?.openSource?.githubUserName;
-
-    if (!githubUserName) {
-      console.warn("GitHub username not found in portfolioData");
-      return { props: { githubProfileData: null, portfolioData } };
-    }
-
-    const githubRes = await fetch(`https://api.github.com/users/${githubUserName}`);
     let githubProfileData: GithubUserType | null = null;
 
-    if (githubRes.ok) {
-      githubProfileData = await githubRes.json();
-    } else {
-      console.error("GitHub fetch failed", githubRes.status, githubRes.statusText);
+    if (githubUserName) {
+      const githubRes = await fetch(`https://api.github.com/users/${githubUserName}`);
+      if (githubRes.ok) githubProfileData = await githubRes.json();
     }
 
     return {
